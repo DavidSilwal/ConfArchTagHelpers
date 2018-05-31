@@ -1,0 +1,13 @@
+﻿@using AspNetSecurity_NoSecurity.Models
+@model IEnumerable<ConferenceModel>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <table class="table">
+            @await Html.PartialAsync("ConferenceToc", new ConferenceModel())
+            @Html.DisplayForModel()
+        </table>
+        <a asp-action="Add">Add</a>
+    </div>
+</div>
+

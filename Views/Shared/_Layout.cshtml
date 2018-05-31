@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment names="production">
+        <link asp rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+              asp-fallback-href-include="~/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+              asp-fallback-href-include="~/bootstrap/bootstrap-theme.min.css">
+        <link rel="stylesheet" asp-href-include="~/*.min.css"/>
+    </environment>
+    <environment names="development">
+        <link asp rel="stylesheet" asp-href-include="~/bootstrap/*.css" asp-href-exclude="~/bootstrap/*.min.css">
+        <link rel="stylesheet" asp-href-include="~/*.css" asp-href-exclude="~/*.min.css" />        
+    </environment>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img asp-append-version="true" src="~/img/ConfArchSmall.png" style="max-width:100%" />
+        </div>
+        <div class="col-md-9 titlecol">
+            <span class="title">@ViewBag.Title</span>           
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</div>
+    <script asp-src-include="~/jquery/*.min.js"></script>
+</body>
+</html>

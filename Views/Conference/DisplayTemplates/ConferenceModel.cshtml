@@ -1,0 +1,16 @@
+﻿@model AspNetSecurity_NoSecurity.Models.ConferenceModel
+
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.Location</td>
+    <td highlight-if-within-days="3">@Model.Start.ToString("ddd d MMM")</td>
+    <td>@Model.TicketsSold</td>
+    <td>
+        <a asp-controller="Proposal" asp-action="Index" asp-route-conferenceId="@Model.Id">Proposals</a>
+    </td>
+</tr>
+<tr>
+    <td colspan="5">
+        <progress-bar amount="@Model.TicketsSold", total-amount="@Model.TotalTickets"></progress-bar>
+    </td>
+</tr>
